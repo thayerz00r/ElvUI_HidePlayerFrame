@@ -39,7 +39,17 @@ function HidePlayerFrame:UpdatePlayerFrame()
     local playerFrame = _G["ElvUF_Player"]
     if not playerFrame then return end
     
-    if self.db.enabled and (IsInGroup() or IsInRaid()) and not UnitHasVehicleUI("player") then
+    -- Check if the player is in a group or raid
+    local isInGroup = IsInGroup() or IsInRaid()
+    
+    -- Check if the player has a vehicle UI
+    local hasVehicleUI = UnitHasVehicleUI("player")
+    
+    -- Check if the frame should be hidden
+    local shouldHide = self.db.enabled and isInGroup and not hasVehicleUI
+    
+    -- Update the frame visibility
+    if shouldHide then
         playerFrame:Hide()
     else
         playerFrame:Show()
