@@ -1,0 +1,9 @@
+## Interface: 100105
+## Title: ElvUI Hide Player Frame
+## Notes: Hides the ElvUI player frame when you are in a party or raid.
+## Author: z00r, assistance from Claude
+## Version: 0.1
+## RequiredDeps: ElvUI
+## DefaultState: Enabled
+
+ElvUI_HidePlayerFrame.lua
